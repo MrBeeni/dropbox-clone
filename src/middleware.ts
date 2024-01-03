@@ -5,14 +5,14 @@ export default authMiddleware({
   publicRoutes: ["/"],
 });
 
-// export const config = {
-//   matcher: ["/dashboard"],
-// };
 export const config = {
-  matcher: [
-    "/((?!.+\\.[\\w]+$|_next).*)",
-    "/",
-    "/(api|trpc)(.*)",
-    "/dashboard",
-  ],
+  matcher: ["/dashboard"],
 };
+// export const config = {
+//   matcher: [
+//     "/((?!.+\\.[\\w]+$|_next).*)",
+//     "/",
+//     "/(api|trpc)(.*)",
+//     "/dashboard",
+//   ],
+// };
