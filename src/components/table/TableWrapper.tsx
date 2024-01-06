@@ -15,8 +15,9 @@ import { useAppStore } from "@/store/store";
 interface TableProps {
   skeletonFile: FileType[];
 }
+
 const TableWrapper: FC<TableProps> = ({ skeletonFile }) => {
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { user } = useUser();
   const [initilaFiles, setInitialFiles] = useState<FileType[]>([]);
   const [sort, setSort] = useState<"asc" | "desc">("asc");
 
@@ -40,6 +41,8 @@ const TableWrapper: FC<TableProps> = ({ skeletonFile }) => {
     }));
     setInitialFiles(files);
   }, [docResult]);
+
+  //for skeleton
   if (docResult?.docs.length === undefined) {
     return (
       <div className="flex flex-col">
